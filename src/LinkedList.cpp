@@ -35,7 +35,7 @@ void LinkedList::insertTail(int data) {
 };
 
 void LinkedList::insertIndex(int data, int index) {
-    if (index > this->size) {
+    if (index >= this->size) {
         this->insertTail(data);
         return;
     }
@@ -46,16 +46,18 @@ void LinkedList::insertIndex(int data, int index) {
     if (index > 0 && index < this->size) {
        Node *node = new Node(data);
        Node *current = this->head;
-       int count = 1;
+       Node *prev = NULL;
+       int count = 0;
 
        while (count < index) {
+           prev = current;
            current = current->getNext();
            count++;
        } 
 
-       node->setNext(current->getNext());
-       current->setNext(node);
-       this->size++;
+        prev->setNext(node);
+        node->setNext(current);
+        this->size++;
     }
 }
 
@@ -98,9 +100,9 @@ void LinkedList::removeIndex(int index) {
     if (index > 0 && index < this->size) {
         Node *current = this->head;
         Node *prev = NULL;
-        int count = 1;
+        int count = 0;
 
-        while (count <= index) {
+        while (count < index) {
             prev = current;
             current = current->getNext();
             count++;

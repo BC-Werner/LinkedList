@@ -2,32 +2,41 @@
 
 int main() {
 
+    // Create a new List
     LinkedList LL;
 
-    LL.insertHead(5);
-    LL.insertHead(25);
-    LL.insertTail(35);
-    LL.insertTail(55);
-    LL.insertIndex(45, 2);
+    // Input into the List
+    LL.insertHead(1);
+    LL.insertIndex(2, 1);
+    LL.insertIndex(3, 2);
+    LL.insertIndex(4, 3);
+    LL.insertTail(5);
+
+    // Print the List to the console
     LL.printList();
 
-    LL.reverseList();
-    LL.insertTail(50);
-    LL.insertTail(20);
-    LL.printList();
-
+    // Remove from the List
     LL.removeHead();
+    LL.removeIndex(2);
     LL.removeTail();
     LL.printList();
 
-    LL.removeIndex(2);
+    // Get the data from an Index in the List
+    // --can also use .getHead() or .getTail()
+    int data = LL.getIndex(1)->getData();
+
+    cout << "{- " << data << " -}" << endl;
+
+    // Repopulating the List
+    LL.insertHead(1);
+    LL.insertIndex(4, 3);
+    LL.insertTail(5);
     LL.printList();
 
-    Node *temp = LL.getTail();
-    cout << temp->getData() << endl;
+    // Reverse the List in place
+    LL.reverseList();
 
-    Node *indexed = LL.getIndex(2);
-    cout << indexed->getData() << endl;
-
+    // Empty the List
+    LL.clearList();
     return 0;
 }
