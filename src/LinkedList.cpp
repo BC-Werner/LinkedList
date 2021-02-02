@@ -157,6 +157,49 @@ int LinkedList::getSize() {
     return this->size;
 }
 
+void LinkedList::setHead(int data) {
+    if (this->head != NULL) {
+        this->head->setData(data);
+    } else {
+        this->insertHead(data);
+    }
+}
+
+void LinkedList::setIndex(int data, int index) {
+    if (index <= 0 || this->head == NULL) {
+        this->setHead(data);
+    }
+    if (index >= this->size) {
+        this->setTail(data);
+    }
+    if (index > 0 && index < this->size) {
+        Node *current = this->head;
+        int count = 0;
+
+        while (count < index) {
+            current = current->getNext();
+            count++;
+        }
+
+        current->setData(data);
+    }
+}
+
+void LinkedList::setTail(int data) {
+    if (this->head != NULL) {
+        Node *current = this->head;
+
+        while (current->getNext() != NULL) {
+            current = current->getNext();
+        }
+
+        current->setData(data);
+
+    } else {
+        this->insertTail(data);
+    }
+}
+
 void LinkedList::clearList() {
     if (this->head != NULL) {
         Node *current = this->head;

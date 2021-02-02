@@ -18,6 +18,9 @@ class LinkedList {
         Node *getTail();
         Node *getIndex(int index);
         int getSize();
+        void setHead(int data);
+        void setIndex(int data, int index);
+        void setTail(int data);
         void clearList();
         void printList();
         void reverseList();
