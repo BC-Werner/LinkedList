@@ -5,6 +5,10 @@ LinkedList::LinkedList() {
     this->size = 0;
 };
 
+LinkedList::~LinkedList() {
+    delete this->head;
+}
+
 void LinkedList::insertHead(int data) {
     if (this->head == NULL) {
         Node *node = new Node(data);

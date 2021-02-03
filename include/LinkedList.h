@@ -7,6 +7,7 @@ class LinkedList {
 
     public:
         LinkedList();
+        ~LinkedList();
 
         void insertHead(int data);
         void insertTail(int data);
