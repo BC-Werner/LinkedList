@@ -241,37 +241,24 @@ void LinkedList::printList() {
     }
 };
 
-
 void LinkedList::reverseList() {
-    // Copy the list into a temporary list
-    LinkedList tempLL;
-    Node *current = this->head;
+    Node *current = head;
+    Node *prev = NULL, *next = NULL;
 
-    while (current->getNext() != NULL) {
-        tempLL.insertHead(current->getData());
-        current = current->getNext();
-    } 
+    while (current != NULL) {
+        // Store the next node
+        next = current->getNext();
 
-    tempLL.insertHead(current->getData());
+        // Reverse current node's pointer
+        current->setNext(prev); 
 
-    // Clear the currentent list
-    this->clearList();
-
-    // Copy the temporary list into the original list
-    current = tempLL.head;
-
-    while (current->getNext() != NULL)
-    {
-        this->insertTail(current->getData());
-        current = current->getNext();
+        // Move pointers on position ahead
+        prev = current;
+        current = next;
     }
-
-    this->insertTail(current->getData());
+    this->head = prev;
 
     this->printList();
-
-    // Clear the temporary list
-    tempLL.clearList();
 }
 
     
