@@ -1,14 +1,17 @@
 #include "../include/LinkedList.h"
 
+// Constructor
 LinkedList::LinkedList() {
     this->head = NULL;
     this->size = 0;
 };
 
+// Destructor
 LinkedList::~LinkedList() {
     delete this->head;
 }
 
+// Insert a new Node at the beginning of the List
 void LinkedList::insertHead(int data) {
     if (this->head == NULL) {
         Node *node = new Node(data);
@@ -22,6 +25,7 @@ void LinkedList::insertHead(int data) {
     }
 };
 
+// Insert a new Node at the end of the List
 void LinkedList::insertTail(int data) {
     if (this->head == NULL) {
         this->insertHead(data);
@@ -38,6 +42,7 @@ void LinkedList::insertTail(int data) {
     }
 };
 
+// Insert a new Node at a given index in the List
 void LinkedList::insertIndex(int data, int index) {
     if (index >= this->size) {
         this->insertTail(data);
@@ -65,6 +70,7 @@ void LinkedList::insertIndex(int data, int index) {
     }
 }
 
+// Delete the Node at the beginning of the List
 void LinkedList::removeHead() {
     if (this->head != NULL) {
         Node *temp = this->head;
@@ -75,6 +81,7 @@ void LinkedList::removeHead() {
     }
 }
 
+// Delete the Node at the end of the List
 void LinkedList::removeTail() {
     if (this->head != NULL) {
         Node *current = this->head;
@@ -92,6 +99,7 @@ void LinkedList::removeTail() {
     }
 }
 
+// Delete the Node at a given index in the List
 void LinkedList::removeIndex(int index) {
     if (index >= this->size) {
         this->removeTail();
@@ -119,11 +127,13 @@ void LinkedList::removeIndex(int index) {
     }
 }
 
+// Return the Node at the beginning of the List
 Node* LinkedList::getHead() {
     return this->head;
 }
 
 
+// Return the Node at the end of the List
 Node* LinkedList::getTail() {
     if (this->head != NULL) {
         Node *current = this->head;
@@ -138,6 +148,8 @@ Node* LinkedList::getTail() {
     return NULL;
 }
 
+
+// Return the Node at a given index in the List
 Node* LinkedList::getIndex(int index) {
     if (index >= this->size) return this->getTail();
     if (index <= 0) return this->getHead();
@@ -157,10 +169,14 @@ Node* LinkedList::getIndex(int index) {
     return NULL;
 }
 
+
+// Return the size of the List
 int LinkedList::getSize() {
     return this->size;
 }
 
+
+// Change the value of the Node at the beginning of the List
 void LinkedList::setHead(int data) {
     if (this->head != NULL) {
         this->head->setData(data);
@@ -169,6 +185,8 @@ void LinkedList::setHead(int data) {
     }
 }
 
+
+// Change the value of the Node at the end of the List
 void LinkedList::setIndex(int data, int index) {
     if (index <= 0 || this->head == NULL) {
         this->setHead(data);
@@ -189,6 +207,8 @@ void LinkedList::setIndex(int data, int index) {
     }
 }
 
+
+// Change the value of the Node at a given index in the List
 void LinkedList::setTail(int data) {
     if (this->head != NULL) {
         Node *current = this->head;
@@ -204,6 +224,8 @@ void LinkedList::setTail(int data) {
     }
 }
 
+
+// Delete all Nodes in the List
 void LinkedList::clearList() {
     if (this->head != NULL) {
         Node *current = this->head;
@@ -224,6 +246,8 @@ void LinkedList::clearList() {
     }
 }
 
+
+// Print the List to the console
 void LinkedList::printList() {
     if (this->head == NULL) {
         cout << "Empty List" << endl;
@@ -241,6 +265,8 @@ void LinkedList::printList() {
     }
 };
 
+
+// Reverse the List
 void LinkedList::reverseList() {
     Node *current = head;
     Node *prev = NULL, *next = NULL;
@@ -259,6 +285,6 @@ void LinkedList::reverseList() {
     this->head = prev;
 
     this->printList();
-}
+
 
     
