@@ -13,19 +13,8 @@ class Node {
             this->next = next;
         }
 
-        int getData() {
-            return this->data;
-        }
-
-        Node *getNext() {
-            return this->next;
-        }
-
-        void setData(int data) {
-            this->data = data;
-        }
-
-        void setNext(Node *next) {
-            this->next = next;
-        }
+        int getData() { return data; }
+        Node *getNext() { return next; }
+        void setData(int data) { this->data = data; }
+        void setNext(Node *next) { this->next = next; }
 };
