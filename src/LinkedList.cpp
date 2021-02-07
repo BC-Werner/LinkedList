@@ -18,8 +18,7 @@ void LinkedList::insertHead(int data) {
         this->head = node;
         this->size++;
     } else {
-        Node *node = new Node(data);
-        node->setNext(this->head);
+        Node *node = new Node(data, this->head);
         this->head = node;
         this->size++;
     }

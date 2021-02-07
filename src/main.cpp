@@ -8,9 +8,10 @@ int main() {
     cout << "--Input into the Linked List--" << endl;
     // Input into the List
     LL.insertHead(1);
-    LL.insertIndex(2, 1);
-    LL.insertIndex(3, 2);
-    LL.insertIndex(4, 3);
+    LL.insertHead(0);
+    LL.insertIndex(2, 2);
+    LL.insertIndex(3, 3);
+    LL.insertIndex(4, 4);
     LL.insertTail(5);
 
     // Print the List to the console
