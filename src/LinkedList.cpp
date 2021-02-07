@@ -8,6 +8,7 @@ LinkedList::LinkedList() {
 
 // Destructor
 LinkedList::~LinkedList() {
+    this->clearList();
     delete this->head;
 }
 
