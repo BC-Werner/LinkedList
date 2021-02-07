@@ -27,9 +27,13 @@ int main() {
     // Get the data from an Index in the List
     // --can also use .getHead() or .getTail()
     int data = LL.getIndex(1)->getData();
-
     cout << "{- " << data << " -}" << endl;
 
+    // Searching the List for the given value
+    cout << "\n--Searching for data in the List--" << endl;
+    LL.search(4);
+
+    
     cout << "\n--Inserting into the list with a for-loop--" << endl;
     // Repopulating the List
     LL.clearList();
@@ -49,6 +53,11 @@ int main() {
     LL.setIndex(9, 1);
     LL.setTail(0);
     LL.printList();
+
+        // Searching the List for the given value
+    cout << "\n--Searching for data in the List--" << endl;
+    LL.search(4);
+
     
     // Empty the List
     LL.clearList();

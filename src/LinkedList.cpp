@@ -170,6 +170,31 @@ Node* LinkedList::getIndex(int index) {
 }
 
 
+// Search the List for a Node with the given data
+void LinkedList::search(int data) {
+    if (this->head != NULL) {
+        Node *current = this->head;
+        int index = 0;
+
+        while (current != NULL) {
+           if (current->getData() == data) {
+               cout << "The value {- " << current->getData() << " -} was found at index {- " << index << " -} in the List" << endl;
+               return;
+           }
+
+           current = current->getNext();
+           index++;
+        }
+
+        cout << "Value: " << data << " :could not be found in the List" << endl;
+        return;
+    }
+    
+    cout << "The List is empty" << endl;
+}
+
+
+
 // Return the size of the List
 int LinkedList::getSize() {
     return this->size;
@@ -285,6 +310,4 @@ void LinkedList::reverseList() {
     this->head = prev;
 
     this->printList();
-
-
-    
+};

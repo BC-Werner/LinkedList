@@ -18,6 +18,7 @@ class LinkedList {
         Node *getHead();
         Node *getTail();
         Node *getIndex(int index);
+        void search(int data);
         int getSize();
         void setHead(int data);
         void setIndex(int data, int index);
