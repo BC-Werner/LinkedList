@@ -12,3 +12,4 @@ All of the basic operations for Linked Lists are implemented including:
 - Deleting every node from the Listt
 - Printing the values of the entire List
 - Reversing the List
+- Searching the List for a specific value
