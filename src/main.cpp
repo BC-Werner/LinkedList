@@ -56,7 +56,7 @@ int main() {
     LL.printList();
 
         // Searching the List for the given value
-    cout << "\n--Searching for data in the List--" << endl;
+    cout << "\n--Searching for the first instance of the given data in the List--" << endl;
     LL.search(4);
 
     

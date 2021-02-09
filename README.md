@@ -9,7 +9,7 @@ All of the basic operations for Linked Lists are implemented including:
 - Deleting at the beginning, at a specified index, and at the end of the List
 - Reading the value of any node in the List
 - Changing the value of any node in the List
-- Deleting every node from the Listt
+- Deleting every node from the List
 - Printing the values of the entire List
 - Reversing the List
 - Searching the List for a specific value
