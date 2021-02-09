@@ -13,6 +13,9 @@ int main() {
     LL.insertIndex(3, 3);
     LL.insertIndex(4, 4);
     LL.insertTail(5);
+    LL.insertTail(5);
+    LL.insertTail(5);
+    LL.insertTail(5);
 
     // Print the List to the console
     LL.printList();
@@ -32,7 +35,7 @@ int main() {
 
     // Searching the List for the given value
     cout << "\n--Searching for data in the List--" << endl;
-    LL.search(4);
+    LL.search(5);
 
     
     cout << "\n--Inserting into the list with a for-loop--" << endl;
@@ -56,7 +59,7 @@ int main() {
     LL.printList();
 
         // Searching the List for the given value
-    cout << "\n--Searching for the first instance of the given data in the List--" << endl;
+    cout << "\n--Searching for data in the List--" << endl;
     LL.search(4);
 
     

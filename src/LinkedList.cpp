@@ -171,22 +171,27 @@ Node* LinkedList::getIndex(int index) {
 
 
 // Search the List for a Node with the given data
+// -- this just prints the value and index at the moment
+// -- in the future i will change this to return an array with the indexes where the value was found
+
 void LinkedList::search(int data) {
     if (this->head != NULL) {
         Node *current = this->head;
         int index = 0;
+        bool found = false;
 
         while (current != NULL) {
            if (current->getData() == data) {
+               found = true;
                cout << "The value {- " << current->getData() << " -} was found at index {- " << index << " -} in the List" << endl;
-               return;
+               // return;
            }
 
            current = current->getNext();
            index++;
         }
 
-        cout << "Value: " << data << " :could not be found in the List" << endl;
+        if (!found) cout << "Value: " << data << " :could not be found in the List" << endl;
         return;
     }
     
