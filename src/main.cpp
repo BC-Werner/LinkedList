@@ -31,37 +31,45 @@ int main() {
     // Get the data from an Index in the List
     // --can also use .getHead() or .getTail()
     int data = LL.getIndex(1)->getData();
-    cout << "{- " << data << " -}" << endl;
+    cout << "Index 1 contains the data: {- " << data << " -}" << endl;
 
     // Searching the List for the given value
     cout << "\n--Searching for data in the List--" << endl;
-    LL.search(5);
+    vector<int> searchData = LL.search(5);
 
+    cout << "Value: 5 was found at index {- ";
+    for (auto it : searchData)
+        cout << it << " ";
+    cout << "-}" << endl;
     
-    cout << "\n--Inserting into the list with a for-loop--" << endl;
     // Repopulating the List
+    cout << "\n--Inserting into the list with a for-loop--" << endl;
     LL.clearList();
     for (int i = 1; i < 6; i++) {
         LL.insertIndex(i, i);
     }
     LL.printList();
     
-    cout << "\n--Reversing the List--" << endl;
     // Reverse the List in place
+    cout << "\n--Reversing the List--" << endl;
     LL.reverseList();
 
-    cout << "\n--Changing the data at an index in the List--" << endl;
     // Change the data at a location [i] and at the head and tail
+    cout << "\n--Changing the data at an index in the List--" << endl;
     LL.setHead(6);
     LL.setIndex(4, 2);
     LL.setIndex(9, 1);
     LL.setTail(0);
     LL.printList();
 
-        // Searching the List for the given value
+    // Searching the List for the given value
     cout << "\n--Searching for data in the List--" << endl;
-    LL.search(4);
+    searchData = LL.search(6);
 
+    cout << "Value: 6 was found at index {- ";
+    for (auto it : searchData)
+        cout << it << " ";
+    cout << "-}" << endl;
     
     // Empty the List
     LL.clearList();

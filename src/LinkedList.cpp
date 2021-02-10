@@ -171,11 +171,17 @@ Node* LinkedList::getIndex(int index) {
 
 
 // Search the List for a Node with the given data
-// -- this just prints the value and index at the moment
-// -- in the future i will change this to return an array with the indexes where the value was found
+// returns a Vector containing the indexes where the given data was found
+// prints to the console if the List is empty or the given data was not in the List
+vector<int> LinkedList::search(int data) {
+    vector<int> positions;
 
-void LinkedList::search(int data) {
-    if (this->head != NULL) {
+    if (this->head == NULL) {
+        cout << "The List is empty" << endl;
+        return positions;
+
+    } else {
+
         Node *current = this->head;
         int index = 0;
         bool found = false;
@@ -183,8 +189,7 @@ void LinkedList::search(int data) {
         while (current != NULL) {
            if (current->getData() == data) {
                found = true;
-               cout << "The value {- " << current->getData() << " -} was found at index {- " << index << " -} in the List" << endl;
-               // return;
+               positions.push_back(index);
            }
 
            current = current->getNext();
@@ -192,10 +197,9 @@ void LinkedList::search(int data) {
         }
 
         if (!found) cout << "Value: " << data << " :could not be found in the List" << endl;
-        return;
+        return positions;
     }
     
-    cout << "The List is empty" << endl;
 }
 
 

@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <vector>
 
 class LinkedList {
     private:
@@ -18,7 +19,7 @@ class LinkedList {
         Node *getHead();
         Node *getTail();
         Node *getIndex(int index);
-        void search(int data);
+        vector<int> search(int data);
         int getSize();
         void setHead(int data);
         void setIndex(int data, int index);
