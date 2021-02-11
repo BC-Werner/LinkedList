@@ -1,5 +1,7 @@
 #include "../include/LinkedList.h"
 
+using namespace std;
+
 int main() {
 
     // Create a new List

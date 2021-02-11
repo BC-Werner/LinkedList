@@ -19,7 +19,7 @@ class LinkedList {
         Node *getHead();
         Node *getTail();
         Node *getIndex(int index);
-        vector<int> search(int data);
+        std::vector<int> search(int data);
         int getSize();
         void setHead(int data);
         void setIndex(int data, int index);

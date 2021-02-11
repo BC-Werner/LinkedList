@@ -1,5 +1,7 @@
 #include "../include/LinkedList.h"
 
+using namespace std;
+
 // Constructor
 LinkedList::LinkedList() {
     this->head = NULL;
