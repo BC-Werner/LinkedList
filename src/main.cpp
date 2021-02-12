@@ -8,16 +8,14 @@ int main() {
     LinkedList LL;
 
     cout << "--Input into the Linked List--" << endl;
-    // Input into the List
-    LL.insertHead(1);
-    LL.insertHead(0);
-    LL.insertIndex(2, 2);
-    LL.insertIndex(3, 3);
-    LL.insertIndex(4, 4);
-    LL.insertTail(5);
-    LL.insertTail(5);
-    LL.insertTail(5);
-    LL.insertTail(5);
+    for (int i = 0; i < 10; i++) {
+        if (i > 5) {
+            int x = i - (i % 5);
+            LL.insertTail(x);
+        } else {
+            LL.insertTail(i);
+        }
+    }
 
     // Print the List to the console
     LL.printList();
