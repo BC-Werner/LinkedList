@@ -2,12 +2,6 @@
 
 using namespace std;
 
-// Constructor
-LinkedList::LinkedList() {
-    this->head = NULL;
-    this->size = 0;
-};
-
 // Destructor
 LinkedList::~LinkedList() {
     this->clearList();

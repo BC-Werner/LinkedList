@@ -7,7 +7,7 @@ class LinkedList {
         int size;
 
     public:
-        LinkedList();
+        LinkedList() : head{ nullptr }, size{ 0 } {};
         ~LinkedList();
 
         void insertHead(int data);
