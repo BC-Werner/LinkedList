@@ -10,7 +10,7 @@ LinkedList::~LinkedList() {
 
 // Insert a new Node at the beginning of the List
 void LinkedList::insertHead(int data) {
-    if (this->head == NULL) {
+    if (this->head == nullptr) {
         Node *node = new Node(data);
         this->head = node;
         this->size++;
@@ -23,13 +23,13 @@ void LinkedList::insertHead(int data) {
 
 // Insert a new Node at the end of the List
 void LinkedList::insertTail(int data) {
-    if (this->head == NULL) {
+    if (this->head == nullptr) {
         this->insertHead(data);
     } else {
         Node *node = new Node(data);
         Node *current = this->head;
 
-        while (current->getNext() != NULL) {
+        while (current->getNext() != nullptr) {
             current = current->getNext();
         }
 
@@ -51,7 +51,7 @@ void LinkedList::insertIndex(int data, int index) {
     if (index > 0 && index < this->size) {
        Node *node = new Node(data);
        Node *current = this->head;
-       Node *prev = NULL;
+       Node *prev = nullptr;
        int count = 0;
 
        while (count < index) {
@@ -68,7 +68,7 @@ void LinkedList::insertIndex(int data, int index) {
 
 // Delete the Node at the beginning of the List
 void LinkedList::removeHead() {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *temp = this->head;
         this->head = this->head->getNext();
         this->size--;
@@ -79,16 +79,16 @@ void LinkedList::removeHead() {
 
 // Delete the Node at the end of the List
 void LinkedList::removeTail() {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *current = this->head;
-        Node *prev = NULL;
+        Node *prev = nullptr;
 
-        while (current->getNext() != NULL) {
+        while (current->getNext() != nullptr) {
             prev = current;
             current = current->getNext();
         }
 
-        prev->setNext(NULL);
+        prev->setNext(nullptr);
         this->size--;
 
         delete current;
@@ -107,7 +107,7 @@ void LinkedList::removeIndex(int index) {
     }
     if (index > 0 && index < this->size) {
         Node *current = this->head;
-        Node *prev = NULL;
+        Node *prev = nullptr;
         int count = 0;
 
         while (count < index) {
@@ -131,17 +131,17 @@ Node* LinkedList::getHead() {
 
 // Return the Node at the end of the List
 Node* LinkedList::getTail() {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *current = this->head;
 
-        while (current->getNext() != NULL) {
+        while (current->getNext() != nullptr) {
             current = current->getNext();
         }
 
         return current;
     }
 
-    return NULL;
+    return nullptr;
 }
 
 
@@ -149,7 +149,7 @@ Node* LinkedList::getTail() {
 Node* LinkedList::getIndex(int index) {
     if (index >= this->size) return this->getTail();
     if (index <= 0) return this->getHead();
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *current = this->head;
         int count = 0;
 
@@ -162,7 +162,7 @@ Node* LinkedList::getIndex(int index) {
         return current;
     }
 
-    return NULL;
+    return nullptr;
 }
 
 
@@ -172,7 +172,7 @@ Node* LinkedList::getIndex(int index) {
 vector<int> LinkedList::search(int data) {
     vector<int> positions;
 
-    if (this->head == NULL) {
+    if (this->head == nullptr) {
         cout << "The List is empty" << endl;
         return positions;
 
@@ -182,7 +182,7 @@ vector<int> LinkedList::search(int data) {
         int index = 0;
         bool found = false;
 
-        while (current != NULL) {
+        while (current != nullptr) {
            if (current->getData() == data) {
                found = true;
                positions.push_back(index);
@@ -208,7 +208,7 @@ int LinkedList::getSize() {
 
 // Change the value of the Node at the beginning of the List
 void LinkedList::setHead(int data) {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         this->head->setData(data);
     } else {
         this->insertHead(data);
@@ -218,7 +218,7 @@ void LinkedList::setHead(int data) {
 
 // Change the value of the Node at the end of the List
 void LinkedList::setIndex(int data, int index) {
-    if (index <= 0 || this->head == NULL) {
+    if (index <= 0 || this->head == nullptr) {
         this->setHead(data);
     }
     if (index >= this->size) {
@@ -240,10 +240,10 @@ void LinkedList::setIndex(int data, int index) {
 
 // Change the value of the Node at a given index in the List
 void LinkedList::setTail(int data) {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *current = this->head;
 
-        while (current->getNext() != NULL) {
+        while (current->getNext() != nullptr) {
             current = current->getNext();
         }
 
@@ -257,11 +257,11 @@ void LinkedList::setTail(int data) {
 
 // Delete all Nodes in the List
 void LinkedList::clearList() {
-    if (this->head != NULL) {
+    if (this->head != nullptr) {
         Node *current = this->head;
-        Node *prev = NULL;
+        Node *prev = nullptr;
 
-        while(current->getNext() != NULL) {
+        while(current->getNext() != nullptr) {
             prev = current;
             current = current->getNext();
             this->size--;
@@ -272,21 +272,21 @@ void LinkedList::clearList() {
         this->size--;
 
         delete current;
-        this->head = NULL;
+        this->head = nullptr;
     }
 }
 
 
 // Print the List to the console
 void LinkedList::printList() {
-    if (this->head == NULL) {
+    if (this->head == nullptr) {
         cout << "Empty List" << endl;
     } else {
         Node *current = this->head;
 
         cout << "{- ";
 
-        while (current->getNext() != NULL) {
+        while (current->getNext() != nullptr) {
             cout << current->getData() << " ";
             current = current->getNext();
         }
@@ -299,9 +299,9 @@ void LinkedList::printList() {
 // Reverse the List
 void LinkedList::reverseList() {
     Node *current = head;
-    Node *prev = NULL, *next = NULL;
+    Node *prev = nullptr, *next = nullptr;
 
-    while (current != NULL) {
+    while (current != nullptr) {
         // Store the next node
         next = current->getNext();
 
