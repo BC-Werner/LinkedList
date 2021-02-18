@@ -7,7 +7,7 @@ class Node {
 
     public:
         Node(int data, Node *next = nullptr) : data{data}, next{next} {}
-        ~Node() { std::cout << "Deleting Node with data: " << data << std::endl; }
+        ~Node() { /* std::cout << "Deleting Node with data: " << data << std::endl; */ }
 
         int getData() { return data; }
         Node *getNext() { return next; }
