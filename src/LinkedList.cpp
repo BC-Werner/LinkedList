@@ -80,6 +80,11 @@ void LinkedList::removeHead() {
 // Delete the Node at the end of the List
 void LinkedList::removeTail() {
     if (this->head != nullptr) {
+        if (this->head->getNext() == nullptr) {
+            delete this->head;
+            this->head = nullptr;
+            return;
+        }
         Node *current = this->head;
         Node *prev = nullptr;
 
